@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Підключення стилів -->
+</head>
+<body>
+    <div class="container">
+        <h1>Pomodoro Timer</h1>
+
+        <!-- Кнопки для вибору режиму: робота чи перерва -->
+        <div class="modes">
+            <button id="workMode" class="active">Work</button>
+            <button id="breakMode">Break</button>
+        </div>
+
+        <!-- Вибір тривалості роботи та перерви -->
+        <div class="time-settings">
+            <label>
+                Work:
+                <select id="workDuration">
+                    <option value="15">15 min</option>
+                    <option value="25" selected>25 min</option>
+                    <option value="30">30 min</option>
+                    <option value="45">45 min</option>
+                    <option value="60">60 min</option>
+                </select>
+            </label>
+            <label>
+                Break:
+                <select id="breakDuration">
+                    <option value="5" selected>5 min</option>
+                    <option value="10">10 min</option>
+                    <option value="15">15 min</option>
+                </select>
+            </label>
+        </div>
+
+        <!-- Таймер (круг і відображення часу) -->
+        <div class="timer-container">
+            <svg class="timer-svg" viewBox="0 0 100 100">
+                <circle class="timer-circle-bg" cx="50" cy="50" r="45"></circle> <!-- Фон кола -->
+                <circle class="timer-circle" cx="50" cy="50" r="45"></circle> <!-- Прогрес кола -->
+            </svg>
+            <div class="timer-display" id="timer">25:00</div> <!-- Відображення часу -->
+        </div>
+
+        <!-- Кнопки управління таймером -->
+        <div class="controls">
+            <button id="startBtn">Start</button> <!-- Запуск таймера -->
+            <button id="pauseBtn" disabled>Pause</button> <!-- Пауза -->
+            <button id="resetBtn">Reset</button> <!-- Скидання -->
+        </div>
+    </div>
+
+    <!-- Звук сигналу по завершенню -->
+    <audio id="alarmSound" src="sound.mp3"></audio>
+
+    <!-- Підключення скрипту -->
+    <script src="script.js"></script>
+</body>
+</html>
